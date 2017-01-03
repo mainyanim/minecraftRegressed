@@ -1,27 +1,76 @@
 var minecraft = {};//namespace created
-// {1. create sky
-// 2. create grass
-// 3. create dirt
-// 4. add some elements
-// } - create world can be onload
 
 
-minecraft.createSkyLine = function() {
-$('<div></div>').attr("id","#ourSky");
+minecraft.createSky = function () {
+  var columns = 20;
+  var $row = $("<div/>", {
+      class: 'row'
+  });
+  var $square = $("<div/>", {
+      class: 'sky'
+  });
 
-for (var i = 0; i < 20; i++){
-  $('#ourSky').append('<div id= '+i+'>sky'+i+'</div>');
-  $('div').addClass("sky");
+  $(document).ready(function () {
+      //add columns to the the temp row object
+      for (var i = 0; i < 20; i++) {
+          $row.append($square.clone());
+      }
+      //clone the temp row object with the columns to the wrapper
+      for (var i = 0; i < 9; i++) {
+          $("#wrapper").append($row.clone());
+      }
+    })
+} //create sky
 
+minecraft.createGrass = function () {
+  var columns = 20;
+  var $row = $("<div/>", {
+      class: 'row'
+  });
+  var $square = $("<div/>", {
+      class: 'grass'
+  });
+
+  $(document).ready(function () {
+      //add columns to the the temp row object
+      for (var i = 0; i < 20; i++) {
+          $row.append($square.clone());
+
+      }
+      //clone the temp row object with the columns to the wrapper
+      for (var i = 0; i < 1; i++) {
+          $("#wrapper").append($row.clone());
+      }
+    })
 }
 
-}
 
+minecraft.createDirt = function () {
+  var columns = 20;
+  var $row = $("<div/>", {
+      class: 'row'
+  });
+  var $square = $("<div/>", {
+      class: 'dirt'
+  });
+
+  $(document).ready(function () {
+      //add columns to the the temp row object
+      for (var i = 0; i < 20; i++) {
+          $row.append($square.clone());
+      }
+      //clone the temp row object with the columns to the wrapper
+      for (var i = 0; i < 4; i++) {
+          $("#wrapper").append($row.clone());
+      }
+    })
+}
 
 
 minecraft.createWorld = function () {
-  minecraft.skyArea();
-  minecraft.createSkyLine();
+  minecraft.createSky();
+  minecraft.createGrass();
+  minecraft.createDirt();
 };
 
 minecraft.createWorld();
