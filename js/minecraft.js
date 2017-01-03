@@ -6,16 +6,21 @@ var minecraft = {};//namespace created
 // } - create world can be onload
 
 
-
 minecraft.createSkyLine = function() {
+$('<div></div>').attr("id","#ourSky");
+
 for (var i = 0; i < 20; i++){
-  $('body').append('<div id= '+i+'>sky'+i+'</div>');
+  $('#ourSky').append('<div id= '+i+'>sky'+i+'</div>');
   $('div').addClass("sky");
-};
+
+}
+
+}
 
 
 
 minecraft.createWorld = function () {
+  minecraft.skyArea();
   minecraft.createSkyLine();
 };
 
