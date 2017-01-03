@@ -1,17 +1,22 @@
-// var rows = 20;
-// for (var i = 0; i < rows.length; i++ ) {
-// $('br');
-//   // for (var j = 0; j < rows.length; j++) {
-//   // $('body').append("<div> id = "+j+"</div>")
-//   // $('div').addClass("sky");
-//   $('body').append('<button id = '+i+'>btn'+i+'</button>');
-//   $('#btns').append('<img src = "http://talkemoji.com/wp-content/uploads/2014/11/emoji-large-053.jpg" id = "img'+i+'">');
-// }
+var minecraft = {};//namespace created
+// {1. create sky
+// 2. create grass
+// 3. create dirt
+// 4. add some elements
+// } - create world can be onload
 
 
-for (var j = 0; j < 20; j++) {
+
+minecraft.createSkyLine = function() {
 for (var i = 0; i < 20; i++){
-  $('body').append('<div li = '+i+'>sky'+i+'</li>');
+  $('body').append('<div id= '+i+'>sky'+i+'</div>');
   $('div').addClass("sky");
 };
-}
+
+
+
+minecraft.createWorld = function () {
+  minecraft.createSkyLine();
+};
+
+minecraft.createWorld();
