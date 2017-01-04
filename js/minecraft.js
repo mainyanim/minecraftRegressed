@@ -29,6 +29,34 @@ minecraft.createSky = function () {
           $("#rowSky7_sk15").removeClass("sky").addClass("tree");
           $("#rowSky6_sk15").removeClass("sky").addClass("tree");
           $("#rowSky5_sk15").removeClass("sky").addClass("tree");
+          //wood created
+          $("#rowSky7_sk3").removeClass("sky").addClass("leaf");
+          $("#rowSky7_sk4").removeClass("sky").addClass("leaf");
+          $("#rowSky7_sk5").removeClass("sky").addClass("leaf");
+          $("#rowSky6_sk4").removeClass("sky").addClass("leaf");
+          //bush created
+          $("#rowSky5_sk14").removeClass("sky").addClass("leaf");
+          $("#rowSky4_sk14").removeClass("sky").addClass("leaf");
+          $("#rowSky4_sk13").removeClass("sky").addClass("leaf");
+          $("#rowSky3_sk14").removeClass("sky").addClass("leaf");
+          $("#rowSky3_sk15").removeClass("sky").addClass("leaf");
+          $("#rowSky4_sk15").removeClass("sky").addClass("leaf");
+          $("#rowSky4_sk16").removeClass("sky").addClass("leaf");
+          $("#rowSky4_sk17").removeClass("sky").addClass("leaf");
+          $("#rowSky5_sk16").removeClass("sky").addClass("leaf");
+          $("#rowSky3_sk16").removeClass("sky").addClass("leaf");
+          $("#rowSky2_sk15").removeClass("sky").addClass("leaf");
+
+
+
+
+
+
+
+
+
+
+
       }
   })
 
