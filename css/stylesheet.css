@@ -33,6 +33,16 @@
   float: left;
   background-image: url('../pic/grass.png');
 }
+
+.tree{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: inline-block;
+    float: left;
+    background-image: url('../pic/tree.png');
+}
+
 .cell {
   width: 40px;
   height: 40px;

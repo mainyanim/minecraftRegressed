@@ -87,22 +87,42 @@ minecraft.createDirt = function () {
   })
 }
 
+minecraft.createTrees=function() {
+    $("#rowSky7_sk15").removeClass("sky").addClass("tree");
+    $("#rowSky6_sk15").removeClass("sky").addClass("tree");
+    $("#rowSky5_sk15").removeClass("sky").addClass("tree");
+};
+
+
 minecraft.createMatrix = function () {
 minecraft.matrix = new Array();
-minecraft.skyArr = new Array(160);
-minecraft.skyArr[0] = "c";
-minecraft.grassArr = new Array(20);
-minecraft.dirtArr = new Array (80);
+    minecraft.skyArrRow1 = new Array(20);
+    minecraft.skyArrRow2 = new Array(20);
+    minecraft.skyArrRow3 = new Array(20);
+    minecraft.skyArrRow4 = new Array(20);
+    minecraft.skyArrRow5 = new Array(20);
+    minecraft.skyArrRow6 = new Array(20);
+    minecraft.skyArrRow7 = new Array(20);
+    minecraft.skyArrRow8 = new Array(20);
+
+    //overriding sky for tree
+    minecraft.skyArrRow8[7]="tree";
+
+    minecraft.grassArr = new Array(20);
+    minecraft.dirtArr1=new Array(20);
+    minecraft.dirtArr2=new Array(20);
+    minecraft.dirtArr3=new Array(20);
+    minecraft.dirtArr4=new Array(20);
+
 minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
-}
-
-
-
-minecraft.createWorld = function () {
+};
+  minecraft.createWorld = function () {
   minecraft.createSky();
   minecraft.createGrass();
   minecraft.createDirt();
   minecraft.createMatrix();
+      minecraft.createTrees();
 };
 
 minecraft.createWorld();
+
