@@ -26,8 +26,13 @@ minecraft.createSky = function () {
           }
 
           $("#wrapper").append(row);
+          $("#rowSky7_sk15").removeClass("sky").addClass("tree");
+          $("#rowSky6_sk15").removeClass("sky").addClass("tree");
+          $("#rowSky5_sk15").removeClass("sky").addClass("tree");
       }
   })
+
+
 } //create sky
 
 minecraft.createGrass = function () {
@@ -87,7 +92,7 @@ minecraft.createDirt = function () {
   })
 }
 
-minecraft.createTrees=function() {
+minecraft.createTrees = function() {
     $("#rowSky7_sk15").removeClass("sky").addClass("tree");
     $("#rowSky6_sk15").removeClass("sky").addClass("tree");
     $("#rowSky5_sk15").removeClass("sky").addClass("tree");
@@ -127,16 +132,19 @@ minecraft.createToolbox = function () {
     var $pickAxe=$("<div/>", {
         class: "pickAxe"
     });
+
     $($toolboxDiv).append($pickAxe);
 
     var $axe=$("<div/>", {
         class: "axe"
     });
+
     $($toolboxDiv).append($axe);
 
     var $shovel=$("<div/>",{
         class: "shovel"
     });
+
     $($toolboxDiv).append($shovel);
 
 }
