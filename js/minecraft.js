@@ -116,6 +116,15 @@ minecraft.matrix = new Array();
 
 minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
 };
+
+
+minecraft.toolBox=function(){
+
+}
+
+
+
+
   minecraft.createWorld = function () {
   minecraft.createSky();
   minecraft.createGrass();
