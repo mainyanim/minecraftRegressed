@@ -122,8 +122,26 @@ minecraft.createToolbox = function () {
   var $toolboxDiv = $("<div/>", {
       class: 'toolboxDiv'
   });
-$("#wrapper").append($toolboxDiv);
+    $("#wrapper").append($toolboxDiv);
+
+    var $pickAxe=$("<div/>", {
+        class: "pickAxe"
+    });
+    $($toolboxDiv).append($pickAxe);
+
+    var $axe=$("<div/>", {
+        class: "axe"
+    });
+    $($toolboxDiv).append($axe);
+
+    var $shovel=$("<div/>",{
+        class: "shovel"
+    });
+    $($toolboxDiv).append($shovel);
+
 }
+
+
 
 minecraft.toolBox=function(pickAxe,axe,shovel){
     this.pickAxe=pickAxe;
