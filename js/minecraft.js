@@ -117,9 +117,13 @@ minecraft.matrix = new Array();
 minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
 };
 
-var toolboxDiv=$("<div/>");
-toolboxDiv.attr("class",toolboxDiv);
-$("#wrapper").append(toolboxDiv);
+
+minecraft.createToolbox = function () {
+  var $toolboxDiv = $("<div/>", {
+      class: 'toolboxDiv'
+  });
+$("#wrapper").append($toolboxDiv);
+}
 
 minecraft.toolBox=function(pickAxe,axe,shovel){
     this.pickAxe=pickAxe;
@@ -145,8 +149,8 @@ minecraft.toolBox=function(pickAxe,axe,shovel){
   minecraft.createGrass();
   minecraft.createDirt();
   minecraft.createMatrix();
-      minecraft.createTrees();
+  minecraft.createTrees();
+  minecraft.createToolbox();
 };
 
 minecraft.createWorld();
-
