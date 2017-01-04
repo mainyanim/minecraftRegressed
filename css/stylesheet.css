@@ -58,14 +58,32 @@
 
 .pickAxe {
   background-image: url('../pic/pickaxe.png');
-  position: relative;
+  margin-top: 50px;
+  width: 90px;
+  height: 90px;
+  right: 50px;
+  position: absolute;
   display: block;
 }
 
 .axe {
   background-image: url('../pic/axe.png');
-  position: relative;
+  margin-top: 50px;
+  width: 90px;
+  height: 90px;
+  position: absolute;
   right: 50px;
-  top: 50px;
+  top: 195px;
   display: block;
+}
+
+.shovel {
+  background-image: url('../pic/shovel.png');
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 290px;
+  right: 50px;
+  margin-top: 50px;
+
 }

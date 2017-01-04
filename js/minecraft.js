@@ -92,12 +92,6 @@ minecraft.createDirt = function () {
   })
 }
 
-minecraft.createTrees = function() {
-    $("#rowSky7_sk15").removeClass("sky").addClass("tree");
-    $("#rowSky6_sk15").removeClass("sky").addClass("tree");
-    $("#rowSky5_sk15").removeClass("sky").addClass("tree");
-};
-
 
 minecraft.createMatrix = function () {
 minecraft.matrix = new Array();
@@ -175,7 +169,6 @@ minecraft.toolBox=function(pickAxe,axe,shovel){
   minecraft.createGrass();
   minecraft.createDirt();
   minecraft.createMatrix();
-  minecraft.createTrees();
   minecraft.createToolbox();
 };
 
