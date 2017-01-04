@@ -73,11 +73,22 @@ minecraft.createDirt = function () {
     })
 }
 
+minecraft.createMatrix = function () {
+minecraft.matrix = new Array();
+minecraft.skyArr = new Array(200);
+minecraft.skyArr[0] = "c";
+minecraft.grassArr = new Array(20);
+minecraft.dirtArr = new Array (100);
+minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
+}
+
+
 
 minecraft.createWorld = function () {
   minecraft.createSky();
   minecraft.createGrass();
   minecraft.createDirt();
+  minecraft.createMatrix();
 };
 
 minecraft.createWorld();
