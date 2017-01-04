@@ -7,7 +7,7 @@ minecraft.createSky = function () {
       class: 'row'
   });
   var $square = $("<div/>", {
-      class: 'sky'
+      class: 'sky cell'
   });
 
   $(document).ready(function () {
@@ -28,7 +28,7 @@ minecraft.createGrass = function () {
       class: 'row'
   });
   var $square = $("<div/>", {
-      class: 'grass'
+      class: 'grass cell'
   });
 
   $(document).ready(function () {
@@ -51,7 +51,7 @@ minecraft.createDirt = function () {
       class: 'row'
   });
   var $square = $("<div/>", {
-      class: 'dirt'
+      class: 'dirt cell'
   });
 
   $(document).ready(function () {

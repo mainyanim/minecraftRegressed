@@ -33,3 +33,7 @@
   float: left;
   background-image: url('../pic/grass.png');
 }
+.cell {
+  width: 40px;
+  height: 40px;
+}
