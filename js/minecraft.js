@@ -46,13 +46,9 @@ minecraft.createSky = function () {
           $("#rowSky5_sk16").removeClass("sky").addClass("leaf");
           $("#rowSky3_sk16").removeClass("sky").addClass("leaf");
           $("#rowSky2_sk15").removeClass("sky").addClass("leaf");
-
-
-
-
-
-
-
+          //tree created
+          $("#rowSky7_sk9").removeClass("sky").addClass("stone");
+          $("#rowSky7_sk10").removeClass("sky").addClass("stone");
 
 
 
@@ -188,7 +184,6 @@ minecraft.createToolbox = function () {
   minecraft.createDirt();
   minecraft.createMatrix();
   minecraft.createToolbox();
-  minecraft.toolBox();
 };
 
 minecraft.createWorld();
