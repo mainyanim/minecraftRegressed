@@ -8,12 +8,15 @@ minecraft.createSky = function () {
   });
   var $square = $("<div/>", {
       class: 'sky cell'
+
   });
 
   $(document).ready(function () {
       //add columns to the the temp row object
       for (var i = 0; i < 20; i++) {
-          $row.append($square.clone());
+          var sq = $square.clone();
+          sq.attr('id','sq'+i)
+          $row.append(sq);
       }
       //clone the temp row object with the columns to the wrapper
       for (var i = 0; i < 9; i++) {
@@ -34,7 +37,9 @@ minecraft.createGrass = function () {
   $(document).ready(function () {
       //add columns to the the temp row object
       for (var i = 0; i < 20; i++) {
-          $row.append($square.clone());
+        var gr = $square.clone();
+        gr.attr('id', 'gr'+i)
+          $row.append(gr);
 
       }
       //clone the temp row object with the columns to the wrapper
@@ -57,7 +62,9 @@ minecraft.createDirt = function () {
   $(document).ready(function () {
       //add columns to the the temp row object
       for (var i = 0; i < 20; i++) {
-          $row.append($square.clone());
+        var dr = $square.clone();
+        dr.attr('id', 'dr'+i);
+          $row.append(dr);
       }
       //clone the temp row object with the columns to the wrapper
       for (var i = 0; i < 4; i++) {
