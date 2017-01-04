@@ -117,10 +117,25 @@ minecraft.matrix = new Array();
 minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
 };
 
+var toolboxDiv=$("<div/>");
+toolboxDiv.attr("class",toolboxDiv);
+$("#wrapper").append(toolboxDiv);
 
-minecraft.toolBox=function(){
+minecraft.toolBox=function(pickAxe,axe,shovel){
+    this.pickAxe=pickAxe;
+    this.axe=axe;
+    this.shovel=shovel;
 
-}
+
+
+
+    //add or removing class on click.
+    function clickTools(e){
+        pickAxe=e.target;
+        axe=e.target;
+        shovel=e.target;
+    }
+};
 
 
 
