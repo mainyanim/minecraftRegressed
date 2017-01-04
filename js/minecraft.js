@@ -170,6 +170,7 @@ minecraft.toolBox=function(pickAxe,axe,shovel){
   minecraft.createDirt();
   minecraft.createMatrix();
   minecraft.createToolbox();
+  minecraft.toolBox();
 };
 
 minecraft.createWorld();
