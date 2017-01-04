@@ -67,6 +67,7 @@
 
 .pickAxe {
   background-image: url('../pic/pickaxe.png');
+    border:1px solid white;
   margin-top: 50px;
   width: 90px;
   height: 90px;
@@ -77,6 +78,7 @@
 
 .axe {
   background-image: url('../pic/axe.png');
+    border:1px solid white;
   margin-top: 50px;
   width: 90px;
   height: 90px;
@@ -88,6 +90,7 @@
 
 .shovel {
   background-image: url('../pic/shovel.png');
+  border:1px solid white;
   position: absolute;
   margin-left:25px;
   width: 90px;

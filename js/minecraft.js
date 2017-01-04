@@ -152,44 +152,34 @@ minecraft.createToolbox = function () {
     $("#wrapper").append($toolboxDiv);
 
     var $pickAxe=$("<div/>", {
-        class: "pickAxe"
+        class: "pickAxe",
+        click:(function(){
+
+        })
     });
 
     $($toolboxDiv).append($pickAxe);
 
     var $axe=$("<div/>", {
-        class: "axe"
+        class: "axe",
+        click:(function(){
+            alert("Axe")
+        })
+
     });
 
     $($toolboxDiv).append($axe);
 
     var $shovel=$("<div/>",{
-        class: "shovel"
+        class: "shovel",
+        click:(function(){
+            alert("shovel")
+        })
     });
 
     $($toolboxDiv).append($shovel);
 
 }
-
-
-
-minecraft.toolBox=function(pickAxe,axe,shovel){
-    this.pickAxe=pickAxe;
-    this.axe=axe;
-    this.shovel=shovel;
-
-
-
-
-    //add or removing class on click.
-    function clickTools(e){
-        pickAxe=e.target;
-        axe=e.target;
-        shovel=e.target;
-    }
-};
-
-
 
 
   minecraft.createWorld = function () {
