@@ -1,5 +1,6 @@
 var minecraft = {};//namespace created
 
+minecraft.tempMemory = [];//temp result onclick
 
 minecraft.createSky = function () {
   var columns = 20;
@@ -49,16 +50,13 @@ minecraft.createSky = function () {
           //tree created
           $("#rowSky7_sk9").removeClass("sky").addClass("stone");
           $("#rowSky7_sk10").removeClass("sky").addClass("stone");
-
-
-
-
       }
   })
 
 
-} //create sky
+} //sky and default elements are created
 
+//sky created
 minecraft.createGrass = function () {
   var columns = 20;
   var $row = $("<div/>", {
@@ -86,8 +84,7 @@ minecraft.createGrass = function () {
       }
   })
 }
-
-
+//grass created
 minecraft.createDirt = function () {
   var columns = 20;
   var $row = $("<div/>", {
@@ -96,6 +93,7 @@ minecraft.createDirt = function () {
   var $square = $("<div/>", {
       class: 'dirt cell'
   });
+
 
   $(document).ready(function () {
       //clone the temp row object with the columns to the wrapper
@@ -115,7 +113,69 @@ minecraft.createDirt = function () {
       }
   })
 }
+//dirt created
 
+minecraft.createToolbox = function () {
+  var $toolboxDiv = $("<div/>", {
+      class: 'toolboxDiv',
+  });
+    $("#wrapper").append($toolboxDiv);
+
+    var $pickAxe=$("<div/>", {
+        class: "pickAxe",
+        click:(function () {
+          if ($($axe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
+            $($axe).css("background-color","black");
+            $($shovel).css("background-color","black");
+          $($pickAxe).css("background-color", "blue")
+        }
+      })
+    })
+    $($pickAxe).attr('id','mPickAxe');
+    $($toolboxDiv).append($pickAxe);
+
+    var $axe=$("<div/>", {
+        class: "axe",
+        click:(function(){
+          if ($($pickAxe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
+            $($pickAxe).css("background-color","black");
+            $($shovel).css("background-color","black");
+          $($axe).css("background-color", "blue")
+        }
+        })
+    });
+    $($axe).attr('id','mAxe');
+    $($toolboxDiv).append($axe);
+
+    var $shovel=$("<div/>",{
+        class: "shovel",
+        click:(function(){
+          if ($($pickAxe).css("background-color", "blue") || $($axe).css("background-color", "blue")) {
+            $($pickAxe).css("background-color","black");
+            $($axe).css("background-color","black");
+          $($shovel).css("background-color", "blue")
+        }
+        })
+    });
+    $($shovel).attr('id','mshovel');
+    $($toolboxDiv).append($shovel);
+
+    var $checkTool=$("<div/>",{
+        class: "toolref",
+        click:(function(){
+            alert("")
+        })
+    });
+    $($checkTool).attr('id','checkbox');
+    $($toolboxDiv).append($checkTool);
+}
+//toolbox created
+
+var cellClicked = function () {
+$(this).removeClass('sky').addClass('tree');
+}
+
+$('body').on('click','.cell', cellClicked);
 
 minecraft.createMatrix = function () {
 minecraft.matrix = new Array();
@@ -136,48 +196,12 @@ minecraft.matrix = new Array();
     minecraft.dirtArr2=new Array(20);
     minecraft.dirtArr3=new Array(20);
     minecraft.dirtArr4=new Array(20);
-
 minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
 };
+//do we actually need matrix?
 
 
-minecraft.createToolbox = function () {
-  var $toolboxDiv = $("<div/>", {
-      class: 'toolboxDiv'
-  });
-    $("#wrapper").append($toolboxDiv);
-
-    var $pickAxe=$("<div/>", {
-        class: "pickAxe",
-        click:(function(){
-
-        })
-    });
-
-    $($toolboxDiv).append($pickAxe);
-
-    var $axe=$("<div/>", {
-        class: "axe",
-        click:(function(){
-            alert("Axe")
-        })
-
-    });
-
-    $($toolboxDiv).append($axe);
-
-    var $shovel=$("<div/>",{
-        class: "shovel",
-        click:(function(){
-            alert("shovel")
-        })
-    });
-
-    $($toolboxDiv).append($shovel);
-
-}
-
-
+// MAIN FUNCTION//
   minecraft.createWorld = function () {
   minecraft.createSky();
   minecraft.createGrass();
@@ -186,4 +210,5 @@ minecraft.createToolbox = function () {
   minecraft.createToolbox();
 };
 
+// main function call
 minecraft.createWorld();

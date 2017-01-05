@@ -96,7 +96,9 @@
   top: 195px;
   display: block;
 }
-
+.ok {
+  background-color: blue;
+}
 .shovel {
   background-image: url('../pic/shovel.png');
   border:1px solid white;
@@ -107,4 +109,14 @@
   top: 290px;
   margin-top: 50px;
 
+}
+
+.toolref {
+  border:1px solid white;
+  position: absolute;
+  margin-left:25px;
+  width: 90px;
+  height: 90px;
+  top: 380px;
+  margin-top: 50px;
 }
