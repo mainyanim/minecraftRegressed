@@ -124,10 +124,19 @@ minecraft.createToolbox = function () {
     var $pickAxe=$("<div/>", {
         class: "pickAxe",
         click:(function () {
+          minecraft.tempMemory = [];
           if ($($axe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
             $($axe).css("background-color","black");
             $($shovel).css("background-color","black");
           $($pickAxe).css("background-color", "blue")
+          minecraft.tempMemory.push("pickaxe chosen");
+          console.log(minecraft.tempMemory)
+          if (minecraft.tempMemory[0] === "pickaxe chosen") {
+            var cellClicked = function () {
+            $(this).removeClass('stone').addClass('sky')
+            }
+            $('body').on('click', '.cell', cellClicked);
+            }
         }
       })
     })
@@ -137,10 +146,19 @@ minecraft.createToolbox = function () {
     var $axe=$("<div/>", {
         class: "axe",
         click:(function(){
+          minecraft.tempMemory = [];
           if ($($pickAxe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
             $($pickAxe).css("background-color","black");
             $($shovel).css("background-color","black");
           $($axe).css("background-color", "blue")
+          minecraft.tempMemory.push("axe chosen");
+          console.log(minecraft.tempMemory)
+          if (minecraft.tempMemory[0] === "axe chosen") {
+            var cellClicked = function () {
+            $(this).removeClass('leaf tree').addClass('sky')
+            }
+            $('body').on('click', '.cell', cellClicked);
+            }
         }
         })
     });
@@ -150,10 +168,19 @@ minecraft.createToolbox = function () {
     var $shovel=$("<div/>",{
         class: "shovel",
         click:(function(){
+          minecraft.tempMemory = [];
           if ($($pickAxe).css("background-color", "blue") || $($axe).css("background-color", "blue")) {
             $($pickAxe).css("background-color","black");
             $($axe).css("background-color","black");
           $($shovel).css("background-color", "blue")
+          minecraft.tempMemory.push("shovel chosen");
+          console.log(minecraft.tempMemory)
+          if (minecraft.tempMemory[0] === "shovel chosen") {
+            var cellClicked = function () {
+            $(this).removeClass('dirt grass').addClass('sky')
+            }
+            $('body').on('click', '.cell', cellClicked);
+            }
         }
         })
     });
@@ -171,11 +198,20 @@ minecraft.createToolbox = function () {
 }
 //toolbox created
 
-var cellClicked = function () {
-$(this).removeClass('sky').addClass('tree');
-}
+// minecraft.toCraft = function () {
+// if (minecraft.tempMemory[0] == "axe chosen") {
+//   $('body').on('click', '.cell', cellClicked);
+//   var cellClicked = function () {
+//   $(".cell").removeClass('leaf').addClass('sky')
+//   }
+//   }
+// }
 
-$('body').on('click','.cell', cellClicked);
+
+
+// $('body').on('click', '.cell', cellClicked);
+
+
 
 minecraft.createMatrix = function () {
 minecraft.matrix = new Array();
@@ -208,6 +244,7 @@ minecraft.matrix.push(minecraft.skyArr,minecraft.grassArr, minecraft.dirtArr);
   minecraft.createDirt();
   minecraft.createMatrix();
   minecraft.createToolbox();
+  // minecraft.toCraft();
 };
 
 // main function call
