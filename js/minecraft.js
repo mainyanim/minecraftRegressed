@@ -235,9 +235,8 @@ minecraft.createToolbox = function () {
 
     var $checkTool=$("<div/>",{
         class: "toolref",
-        click:(function(){
-           //add counter
-        })
+        click:(minecraft.inventoryToBody)
+        //calls below function
     });
     $($checkTool).attr('id','checkbox');
     $($toolboxDiv).append($checkTool);
@@ -245,19 +244,23 @@ minecraft.createToolbox = function () {
 
 //END CREATION OF TOOLS
 
-minecraft.toCraft = function () {
-if (minecraft.tempMemory == "axe chosen") {
-  $('body').on('click', '.cell', cellClicked);
-  var cellClicked = function () {
-  $(".cell").removeClass('leaf').addClass('sky')
+minecraft.inventoryToBody=function(){
+
+    //PickAxe
+    if("pickAxe") {
+        $(this).removeClass("stone");
     }
-  }
+        if($(this).hasClass("sky dirt tree wood")){
+            $(this).removeClass();
+            $(this).addClass("stone");
+        }
 
+    //Axe
+    //if("axe")
 
-
-
+    //shovel
+    //if ("shovel")
 };
-//$('body').on('click', '.cell', cellClicked);
 
 
 // MAIN FUNCTION//
