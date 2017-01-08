@@ -199,7 +199,8 @@ minecraft.createToolbox = function () {
           if ($($axe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
             $($axe).css("background-color","black");
             $($shovel).css("background-color","black");
-            $($pickAxe).css("background-color", "blue")
+            $($pickAxe).css("background-color", "blue");
+            $('#checkbox').removeClass("ok");
           }
           minecraft.tempMemory = "pickaxe chosen";
           console.log(minecraft.tempMemory)
@@ -215,10 +216,12 @@ minecraft.createToolbox = function () {
           if ($($pickAxe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
             $($pickAxe).css("background-color","black");
             $($shovel).css("background-color","black");
-          $($axe).css("border", "blue");
+          $($axe).css("background-color", "blue");
+          $('#checkbox').removeClass("ok");
+        }
           minecraft.tempMemory= "axe chosen";
           console.log(minecraft.tempMemory)
-            }
+
       })
     });
     $($axe).attr('id','mAxe');
@@ -232,10 +235,11 @@ minecraft.createToolbox = function () {
             $($pickAxe).css("background-color","black");
             $($axe).css("background-color","black");
             $($shovel).css("background-color", "blue");
+            $('#checkbox').removeClass("ok");
+          }
           minecraft.tempMemory = "shovel chosen";
           console.log(minecraft.tempMemory)
 
-        }
         })
     });
     $($shovel).attr('id','mshovel');
@@ -244,7 +248,7 @@ minecraft.createToolbox = function () {
     var $checkTool=$("<div/>",{
         class: "toolref",
         click: (function() {
-          if ($("#checkbox").hasClass("stone")) {
+              if ($("#checkbox").hasClass("stone") || $("#checkbox").hasClass("dirt") || $("#checkbox").hasClass("tree") || $("#checkbox").hasClass("leaf") || $("#checkbox").hasClass("grass")) {
               $('#checkbox').addClass("ok");
             }
         })
