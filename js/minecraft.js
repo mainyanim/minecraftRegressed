@@ -146,10 +146,26 @@ minecraft.createMatrix = function () {
 
 //START CREATION OF TOOLS
 minecraft.toCraft = function () {
-if ($("#checkbox").hasClass("stone")) {
-  $('#checkbox').addClass("ok");
-$('body').on('click','.cell').addClass('stone');
-}
+if ($("#checkbox").hasClass("stone") && $('#checkbox').hasClass("ok")) {
+$(this).removeClass('dirt').addClass('stone');
+};
+
+if ($("#checkbox").hasClass("dirt") && $('#checkbox').hasClass("ok")) {
+$(this).removeClass('stone').addClass('dirt');
+return;
+};
+if ($("#checkbox").hasClass("grass") && $('#checkbox').hasClass("ok")) {
+$(this).removeClass('stone').addClass('grass');
+return;
+};
+if ($("#checkbox").hasClass("tree") && $('#checkbox').hasClass("ok")) {
+$(this).removeClass('sky').addClass('tree');
+return;
+};
+if ($("#checkbox").hasClass("leaf") && $('#checkbox').hasClass("ok")) {
+$(this).removeClass('sky').addClass('leaf');
+return;
+};
 }
 
 
@@ -189,7 +205,6 @@ minecraft.createToolbox = function () {
       class: 'toolboxDiv'
   });
   $('body').on('click', '.cell', minecraft.cellClicked);
-
     $("#wrapper").append($toolboxDiv);
 
     var $pickAxe=$("<div/>", {
@@ -246,17 +261,20 @@ minecraft.createToolbox = function () {
     $($toolboxDiv).append($shovel);
 
     var $checkTool=$("<div/>",{
+
         class: "toolref",
         click: (function() {
-              if ($("#checkbox").hasClass("stone") || $("#checkbox").hasClass("dirt") || $("#checkbox").hasClass("tree") || $("#checkbox").hasClass("leaf") || $("#checkbox").hasClass("grass")) {
-              $('#checkbox').addClass("ok");
-            }
-        })
-        //calls below function
+          $('body').on('click', '.cell', minecraft.toCraft);
+          if ($("#checkbox").hasClass("stone") || $("#checkbox").hasClass("dirt") || $("#checkbox").hasClass("tree") || $("#checkbox").hasClass("leaf") || $("#checkbox").hasClass("grass")) {
+          $('#checkbox').addClass("ok");
+          }
+        }) // creates border if tool chosen
+       //calls below function
     });
     $($checkTool).attr('id','checkbox');
     $($toolboxDiv).append($checkTool);
 };
+
 
 //END CREATION OF TOOLS
 
@@ -290,7 +308,6 @@ minecraft.inventoryToBody=function(){
   minecraft.createDirt();
   minecraft.createMatrix();
   minecraft.createToolbox();
-  minecraft.toCraft();
 };
 
 // main function call
