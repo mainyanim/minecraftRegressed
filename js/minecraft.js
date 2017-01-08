@@ -145,6 +145,13 @@ minecraft.createMatrix = function () {
 // END OF THE MATRIX
 
 //START CREATION OF TOOLS
+minecraft.toCraft = function () {
+if ($("#checkbox").hasClass("stone")) {
+  $('#checkbox').addClass("ok");
+$('body').on('click','.cell').addClass('stone');
+}
+}
+
 
 minecraft.cellClicked = function(){
   if (minecraft.tempMemory === "pickaxe chosen") {
@@ -175,13 +182,14 @@ minecraft.cellClicked = function(){
       $('#checkbox').addClass('grass');
     }
     }
-};
+  };
 
 minecraft.createToolbox = function () {
   var $toolboxDiv = $("<div/>", {
       class: 'toolboxDiv'
   });
   $('body').on('click', '.cell', minecraft.cellClicked);
+
     $("#wrapper").append($toolboxDiv);
 
     var $pickAxe=$("<div/>", {
@@ -207,7 +215,7 @@ minecraft.createToolbox = function () {
           if ($($pickAxe).css("background-color", "blue") || $($shovel).css("background-color", "blue")) {
             $($pickAxe).css("background-color","black");
             $($shovel).css("background-color","black");
-          $($axe).css("background-color", "blue");
+          $($axe).css("border", "blue");
           minecraft.tempMemory= "axe chosen";
           console.log(minecraft.tempMemory)
             }
@@ -235,7 +243,11 @@ minecraft.createToolbox = function () {
 
     var $checkTool=$("<div/>",{
         class: "toolref",
-        click:(minecraft.inventoryToBody)
+        click: (function() {
+          if ($("#checkbox").hasClass("stone")) {
+              $('#checkbox').addClass("ok");
+            }
+        })
         //calls below function
     });
     $($checkTool).attr('id','checkbox');
@@ -263,6 +275,10 @@ minecraft.inventoryToBody=function(){
 };
 
 
+
+
+
+
 // MAIN FUNCTION//
   minecraft.createWorld = function () {
   minecraft.createSky();
@@ -275,6 +291,3 @@ minecraft.inventoryToBody=function(){
 
 // main function call
 minecraft.createWorld();
-
-
-
