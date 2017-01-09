@@ -1,3 +1,22 @@
+#start-page{
+    background-color:lightblue;
+    z-index:3;
+}
+
+#start-page img{
+    padding-left:70px;
+    height:350px;
+    width:1200px;
+    display:inline-block;
+    z-index:3;
+}
+
+#bottom{
+    background-color:lightblue;
+    height:400px;
+    z-index:3;
+}
+
 #wrapper {
     width: 940px;
     height: 850px;
@@ -74,6 +93,11 @@
     background-color: black;
 }
 
+.ok {
+    border: 6px solid blue;
+
+}
+
 .pickAxe {
   background-image: url('../pic/pickaxe.png');
     border:1px solid white;
@@ -83,6 +107,7 @@
   margin-left:25px;
   position: absolute;
   display: block;
+    z-index:1;
 }
 
 .axe {
@@ -94,12 +119,11 @@
   margin-left:25px;
   position: absolute;
   top: 195px;
-  display: block;
-}
-.ok {
-  border: 6px solid blue;
+  display:none;
+    z-index:1;
 
 }
+
 .shovel {
   background-image: url('../pic/shovel.png');
   border:1px solid white;
@@ -109,6 +133,8 @@
   height: 90px;
   top: 290px;
   margin-top: 50px;
+  z-index:1;
+    display:none;
 
 }
 

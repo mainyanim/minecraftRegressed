@@ -1,5 +1,14 @@
 var minecraft = {};//namespace created
 
+minecraft.homePage=function(){
+    $("#start-button").click(function(){
+        $("#start-page").fadeOut("slow");
+        $(".axe").show();
+        $(".shovel").show();
+    })
+};
+minecraft.homePage();
+
 minecraft.tempMemory = "";//temp result onclick
 
 
@@ -152,7 +161,7 @@ $(this).removeClass('dirt').addClass('stone');
 
 if ($("#checkbox").hasClass("dirt") && $('#checkbox').hasClass("ok")) {
 $(this).removeClass('stone').addClass('dirt');
-return;
+return //exits statement;
 };
 if ($("#checkbox").hasClass("grass") && $('#checkbox').hasClass("ok")) {
 $(this).removeClass('stone').addClass('grass');
@@ -160,12 +169,12 @@ return;
 };
 if ($("#checkbox").hasClass("tree") && $('#checkbox').hasClass("ok")) {
 $(this).removeClass('sky').addClass('tree');
-return;
+    return;
 };
 if ($("#checkbox").hasClass("leaf") && $('#checkbox').hasClass("ok")) {
 $(this).removeClass('sky').addClass('leaf');
 return;
-};
+    };
 }
 
 
@@ -179,7 +188,7 @@ minecraft.cellClicked = function(){
   }
   if (minecraft.tempMemory === "axe chosen") {
 
-      $('#checkbox').removeClass('toolbox leaf dirt stone');
+        $('#checkbox').removeClass('toolbox leaf dirt stone');
       if ($(this).hasClass('tree')) {
       $(this).removeClass('tree').addClass('sky');
       $('#checkbox').addClass('tree');
@@ -271,35 +280,13 @@ minecraft.createToolbox = function () {
         }) // creates border if tool chosen
        //calls below function
     });
+    //setting ID checkBox
     $($checkTool).attr('id','checkbox');
     $($toolboxDiv).append($checkTool);
 };
 
 
 //END CREATION OF TOOLS
-
-minecraft.inventoryToBody=function(){
-
-    //PickAxe
-    if("pickAxe") {
-        $(this).removeClass("stone");
-    }
-        if($(this).hasClass("sky dirt tree wood")){
-            $(this).removeClass();
-            $(this).addClass("stone");
-        }
-
-    //Axe
-    //if("axe")
-
-    //shovel
-    //if ("shovel")
-};
-
-
-
-
-
 
 // MAIN FUNCTION//
   minecraft.createWorld = function () {
